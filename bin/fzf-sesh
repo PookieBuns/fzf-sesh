@@ -24,7 +24,7 @@ _fzf_sesh_fzf_sesh_list_tmux() {
 }
 
 _fzf_sesh_extract_path_from_icon_path() {
-	echo $1 | awk '{print $2}'
+	echo $1 | awk '{if ($2 != "") print $2; else print}'
 }
 
 _fzf_sesh_main() {
