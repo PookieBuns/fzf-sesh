@@ -44,5 +44,6 @@ sesh() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	SHLVL=$((SHLVL - 1))
 	_fzf_sesh_main
 fi
