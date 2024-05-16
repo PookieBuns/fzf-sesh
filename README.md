@@ -6,17 +6,17 @@
 [sesh]: https://github.com/joshmedeski/sesh
 [fzf-tmux]: https://github.com/junegunn/fzf/blob/master/bin/fzf-tmux
 
-### But sesh already provided bindings for fzf in the README
+## But sesh already provided bindings for fzf in the README
 
 Yes, but currently, the bindings don't support for nerd font icons. This script adds nerd font icons to the fzf picker, and handles the post processing of the selection that gets sent to `sesh connect`.
 
-### Prerequisites
+## Prerequisites
 
 - A nerd font patched terminal
 - [fzf][fzf] with [fzf-tmux][fzf-tmux]
 - [sesh][sesh]
 
-### Installation
+## Installation
 
 Clone this repository to your machine (e.g. `~/.local/share/fzf-sesh`).
 
@@ -36,7 +36,7 @@ If you want to use `fzf-sesh` as a separate command instead, add the executable 
 export PATH=$PATH:$HOME/.local/share/fzf-sesh/bin
 ```
 
-### Usage
+## Usage
 
 - Outside of tmux
 
