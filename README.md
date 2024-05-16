@@ -6,7 +6,7 @@
 [sesh]: https://github.com/joshmedeski/sesh
 [fzf-tmux]: https://github.com/junegunn/fzf/blob/master/bin/fzf-tmux
 
-## But sesh already provided bindings for fzf in the README
+## But sesh already provided bindings for fzf in the README!
 
 Yes, but currently, the bindings don't support for nerd font icons. This script bridges the gap by adding nerd font icons to the fzf picker, and handles the post processing of the selection that gets sent to `sesh connect`.
 
