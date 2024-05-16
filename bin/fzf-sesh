@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 __fzf_sesh_list_with_icon_cmd="sesh list -i"
 
 _fzf_sesh_list_with_icons() {
@@ -25,7 +27,7 @@ _fzf_sesh_extract_path_from_icon_path() {
 	echo $1 | awk '{print $2}'
 }
 
-fzf_sesh() {
+_fzf_sesh_main() {
 	local sesh_list_cmd="_fzf_sesh_fzf_sesh_list"
 	if [ -n "$TMUX" ]; then
 		sesh_list_cmd="_fzf_sesh_fzf_sesh_list_tmux"
@@ -34,13 +36,13 @@ fzf_sesh() {
 }
 
 sesh() {
-	if [ "$FZF_SESH_REPLACE_SESH_CMD" = "true" ]; then
-		if [[ -z "$1" ]] || [[ "$1" == "connect" && -z "$2" ]]; then
-			fzf_sesh "$@"
-		else
-			command sesh "$@"
-		fi
+	if [[ -z "$1" ]] || [[ "$1" == "connect" && -z "$2" ]]; then
+		_fzf_sesh_main "$@"
 	else
 		command sesh "$@"
 	fi
 }
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	_fzf_sesh_main
+fi
