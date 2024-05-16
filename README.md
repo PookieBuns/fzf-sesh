@@ -8,7 +8,11 @@
 
 ## But sesh already provided bindings for fzf in the README!
 
-Yes, but currently, the bindings don't support for nerd font icons. This script bridges the gap by adding nerd font icons to the fzf picker, and handles the post processing of the selection that gets sent to `sesh connect`.
+Yes, but currently, the bindings don't support for nerd font icons, and require some manual setup to get working. This script aims to provide an out of the box bridge between fzf and sesh with the following features
+
+- `fzf-sesh` command to launch a sesh picker with fzf
+- Support fzf picker with icons and handles postprocessing of the selected session to connect to
+- (Optional) replace `sesh` and `sesh connect` without arguments to launch the fzf sesh picker
 
 ## Prerequisites
 
