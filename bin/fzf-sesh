@@ -23,16 +23,12 @@ _fzf_sesh_fzf_sesh_list_tmux() {
 		--bind "ctrl-d:execute(tmux kill-session -t {2})+change-prompt(⚡  )+reload($__fzf_sesh_list_with_icon_cmd)"
 }
 
-_fzf_sesh_extract_path_from_icon_path() {
-	echo $1 | awk '{if ($2 != "") print $2; else print}'
-}
-
 _fzf_sesh_main() {
 	local sesh_list_cmd="_fzf_sesh_fzf_sesh_list"
 	if [ -n "$TMUX" ]; then
 		sesh_list_cmd="_fzf_sesh_fzf_sesh_list_tmux"
 	fi
-	command sesh connect $(_fzf_sesh_extract_path_from_icon_path "$(eval $sesh_list_cmd)")
+	command sesh connect "$(eval $sesh_list_cmd)"
 }
 
 sesh() {
